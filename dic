@@ -1,0 +1,26 @@
+import time
+
+meme_dict = {
+    "CRINGE": "Coś wyjątkowo dziwnego lub zawstydzającego",
+    "LOL": "Częsta reakcja na coś zabawnego",
+    "XD": "Emotikon wyrażający śmiech lub rozbawienie",
+    "SZTOS": "Coś wyjątkowego, doskonałego; wyraz uznania",
+    "DZBAN": "Osoba niemądra, zachowująca się nierozsądnie",
+    "FOMO": "Strach przed przegapieniem czegoś (ang. Fear Of Missing Out)",
+    "YOLO": "Żyje się tylko raz (ang. You Only Live Once), uzasadnienie ryzykownych działań",
+    "BEKA": "Coś zabawnego; 'mieć bekę' oznacza 'śmiać się z czegoś'",
+    "HEJT": "Negatywny komentarz lub krytyka w internecie (ang. hate)",
+    "STAN": "Oddany fan lub obsesja na punkcie kogoś/czegoś (pochodzi od piosenki Eminema)",
+}
+
+print("Witaj w słowniku który cofnie cie w czasie o 10 lat !!! \n")
+time.sleep(2)
+print(", ".join(meme_dict.keys()))
+print("\n")
+time.sleep(1)
+word = input("Jakie słowo byś chciał poznać?")
+
+if word in meme_dict.keys():
+    print(wordmeme_dict[word]}")
+else:
+    print("Nie znaleziono takiego słowa w słowniku.")
