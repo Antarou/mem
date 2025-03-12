@@ -1,26 +1,19 @@
-import time
+import discord
+from discord.ext import commands
 
-meme_dict = {
-    "CRINGE": "Coś wyjątkowo dziwnego lub zawstydzającego",
-    "LOL": "Częsta reakcja na coś zabawnego",
-    "XD": "Emotikon wyrażający śmiech lub rozbawienie",
-    "SZTOS": "Coś wyjątkowego, doskonałego; wyraz uznania",
-    "DZBAN": "Osoba niemądra, zachowująca się nierozsądnie",
-    "FOMO": "Strach przed przegapieniem czegoś (ang. Fear Of Missing Out)",
-    "YOLO": "Żyje się tylko raz (ang. You Only Live Once), uzasadnienie ryzykownych działań",
-    "BEKA": "Coś zabawnego; 'mieć bekę' oznacza 'śmiać się z czegoś'",
-    "HEJT": "Negatywny komentarz lub krytyka w internecie (ang. hate)",
-    "STAN": "Oddany fan lub obsesja na punkcie kogoś/czegoś (pochodzi od piosenki Eminema)",
-}
+intents = discord.Intents.default()
+intents.message_content = True
 
-print("Witaj w słowniku który cofnie cie w czasie o 10 lat !!! \n")
-time.sleep(2)
-print(", ".join(meme_dict.keys()))
-print("\n")
-time.sleep(1)
-word = input("Jakie słowo byś chciał poznać?")
+bot = commands.Bot(command_prefix='$', intents=intents)
 
-if word in meme_dict.keys():
-    print(wordmeme_dict[word]}")
-else:
-    print("Nie znaleziono takiego słowa w słowniku.")
+@bot.event
+async def on_ready():
+    print(f'Zalogowaliśmy się jako {bot.user}')
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'Cześć, jestem bot{bot.user}!')
+
+@bot.command()
+async def heh(ctx, count_heh = 5):
+    await ctx.send("he" * count_heh)
